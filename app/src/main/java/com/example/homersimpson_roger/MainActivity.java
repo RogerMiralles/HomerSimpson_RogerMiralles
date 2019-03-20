@@ -4,6 +4,8 @@ import android.graphics.drawable.AnimationDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +38,15 @@ public class MainActivity extends AppCompatActivity {
                     enVerd.setVisibility(View.VISIBLE);
                     enBlau.setVisibility(View.VISIBLE);
                     estaVisible=true;
+                    Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                            R.anim.animvermell);
+                    enVermell.startAnimation(animation);
+                    Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(),
+                            R.anim.animverd);
+                    enVerd.startAnimation(animation1);
+                    Animation animation2 = AnimationUtils.loadAnimation(getApplicationContext(),
+                            R.anim.animblau);
+                    enBlau.startAnimation(animation2);
                 }else if(estaVisible==true){
                     ull.setVisibility(View.INVISIBLE);
                     donut.setVisibility(View.INVISIBLE);

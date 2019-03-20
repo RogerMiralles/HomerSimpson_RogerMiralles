@@ -1,17 +1,20 @@
 package com.example.homersimpson_roger;
 
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ImageView animacioTitol;
     ImageView ull,donut,enVermell,enVerd,enBlau;
-    boolean estaVisible;
+    boolean estaVisible,estaSonan;
+    MediaPlayer player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,29 @@ public class MainActivity extends AppCompatActivity {
         enVerd.setVisibility(View.INVISIBLE);
         enBlau.setVisibility(View.INVISIBLE);
         estaVisible=false;
+        estaSonan=false;
+        donut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(estaSonan==false){
+                    if (player == null) {
+                        player = MediaPlayer.create(getApplicationContext(), R.raw.the_simpsons);
+                        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                stopPlayer();
+                            }
+                        });
+                    }
+
+                    player.start();
+                    estaSonan=true;
+                }else if(estaSonan==true){
+                    player.pause();
+                    estaSonan=false;
+                }
+            }
+        });
         animacioTitol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +64,12 @@ public class MainActivity extends AppCompatActivity {
                     enVerd.setVisibility(View.VISIBLE);
                     enBlau.setVisibility(View.VISIBLE);
                     estaVisible=true;
+                    Animation animationDonut = AnimationUtils.loadAnimation(getApplicationContext(),
+                            R.anim.animdonut);
+                    donut.startAnimation(animationDonut);
+                    Animation animationUll = AnimationUtils.loadAnimation(getApplicationContext(),
+                            R.anim.animull);
+                    ull.startAnimation(animationUll);
                     Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
                             R.anim.animvermell);
                     enVermell.startAnimation(animation);
@@ -62,5 +94,11 @@ public class MainActivity extends AppCompatActivity {
         anim.start();
     }
 
-
+    private void stopPlayer() {
+        if (player != null) {
+            player.release();
+            player = null;
+            Toast.makeText(this, "MediaPlayer released", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

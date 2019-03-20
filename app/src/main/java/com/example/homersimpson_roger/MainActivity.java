@@ -76,9 +76,11 @@ public class MainActivity extends AppCompatActivity {
                     Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(),
                             R.anim.animverd);
                     enVerd.startAnimation(animation1);
+
                     Animation animation2 = AnimationUtils.loadAnimation(getApplicationContext(),
                             R.anim.animblau);
                     enBlau.startAnimation(animation2);
+
                 }else if(estaVisible==true){
                     ull.setVisibility(View.INVISIBLE);
                     donut.setVisibility(View.INVISIBLE);

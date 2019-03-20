@@ -15,6 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:contentDescription="@string/homercara"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/titol"
@@ -28,9 +29,82 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:contentDescription="@string/titol"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.191"
         app:srcCompat="@drawable/animfoto" />
+
+    <ImageView
+        android:id="@+id/donut"
+        android:layout_width="133dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/donut"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/homerImg"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titol"
+        app:layout_constraintVertical_bias="0.14"
+        app:srcCompat="@drawable/donut" />
+
+    <ImageView
+        android:id="@+id/ull"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/ull"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.466"
+        app:srcCompat="@drawable/ull" />
+
+    <ImageView
+        android:id="@+id/enVermell"
+        android:layout_width="65dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="84dp"
+        android:contentDescription="@string/envermell"
+        app:layout_constraintEnd_toEndOf="@+id/homerImg"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintStart_toStartOf="@+id/homerImg"
+        app:layout_constraintTop_toTopOf="@+id/homerImg"
+        app:srcCompat="@drawable/engranatge_vermell" />
+
+    <ImageView
+        android:id="@+id/enVerd"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/enverd"
+        app:layout_constraintEnd_toEndOf="@+id/homerImg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/enVermell"
+        app:layout_constraintTop_toTopOf="@+id/homerImg"
+        app:srcCompat="@drawable/engranatge_verd" />
+
+    <ImageView
+        android:id="@+id/enBlau"
+        android:layout_width="57dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/enblau"
+        app:layout_constraintBottom_toBottomOf="@+id/homerImg"
+        app:layout_constraintEnd_toEndOf="@+id/homerImg"
+        app:layout_constraintStart_toStartOf="@+id/homerImg"
+        app:layout_constraintTop_toBottomOf="@+id/enVermell"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/engranatge_blau" />
 </android.support.constraint.ConstraintLayout>

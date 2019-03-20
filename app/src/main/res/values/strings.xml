@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">HomerSimpson_Roger</string>
+    <string name="titol">titol</string>
+    <string name="homercara">homercara</string>
+    <string name="donut">donut</string>
+    <string name="ull">ull</string>
+    <string name="envermell">enVermell</string>
+    <string name="enverd">enVerd</string>
+    <string name="enblau">enBlau</string>
 </resources>
